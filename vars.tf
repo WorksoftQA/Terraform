@@ -6,12 +6,12 @@ variable "viserver" {
 
 // default VM name in vSphere
 variable "vmname" {
-  default = "test-vm"
+  default = "terravm"
 }
 
 // default VM hostname
 variable "vmhostname" {
-  default = "test-host"
+  default = "terravm"
 }
 
 // default Resource Pool
@@ -26,15 +26,15 @@ variable "vmdomain" {
 
 // default datastore to deploy vmdk
 variable "vmdatastore" {
-  default = "DS_SILVER_01"
+  default = "HQ-DEV02"
 }
 
 // default VM Template
 variable "vmtemp" {
-  default = "CENTOS-TEMP"
+  default = "DEV_WIN10X64_PRE_REQS"
 }
 
-// map of the datastore clusters (vmdatastore = "vmdscluster")
+/* map of the datastore clusters (vmdatastore = "vmdscluster")
 variable "vmdscluster" {
   type = "map"
   default = {
@@ -43,9 +43,9 @@ variable "vmdscluster" {
     DS_GOLD_01 = "DS_CLUSTER_GOLD"
     DS_GOLD_02 = "DS_CLUSTER_GOLD"
   }
-}
+} 
 
-// map of the compute clusters (vmrp = "vmcluster")
+map of the compute clusters (vmrp = "vmcluster")
 variable vmcluster {
   type = "map"
   default = {
@@ -53,7 +53,7 @@ variable vmcluster {
     ANOTHER_RP = "RESOURCE_01_CLUSTER_GOLD"
     THIRD_RP = "RESOURCE_CLUSTER_SILVER"
   }
-}
+}  
 
 // map of the first three octets of the IP address (with netmask /24, vmdomain = "vmaddrbase")
 variable "vmaddrbase" {
@@ -62,7 +62,7 @@ variable "vmaddrbase" {
     local.domain = "192.168.0."
     second.domain = "192.168.1."
   }
-}
+}  
 
 // host octet in the IP address
 variable "vmaddroctet" {
@@ -94,12 +94,12 @@ variable "vmdns2" {
     local.domain = "192.168.0.6"
     second.domain = "192.168.1.6"
   }
-}
+} */
 
 // map of the VM Network (vmdomain = "vmnetlabel")
 variable "vmnetlabel" {
   type = "map"
   default = {
-    local.domain = "NET_Backend_01"
+    local.domain = "ENG-DEV"
   }
 }
